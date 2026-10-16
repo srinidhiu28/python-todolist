@@ -1,90 +1,59 @@
 # python-todolist
 A simple command line TODO list application built using Python,It allows users to add,view,and remove tasks with input validationn and error handling.
-```python
-def print_menu():
-    print('\nTODO LIST MENU:')
-    print('1. View Tasks')
-    print('2. Add a Task')
-    print('3. Remove a Task')
-    print('4. Exit')
+# Python TODO List Application
 
+## About the Project
 
-def get_choice():
-    while True:
-        choice = input('Enter your choice: ')
-        valid_choices = ('1', '2', '3', '4')
+The Python TODO List Application is a beginner-friendly command-line project that helps users manage their daily tasks.
 
-        if choice not in valid_choices:
-            print('Invalid choice! Please enter 1, 2, 3, or 4.')
-            continue
-        else:
-            return choice
+Users can add new tasks, view existing tasks, remove completed tasks, and exit the application through a simple menu.
 
+## Features
 
-def display_tasks(tasks):
-    if not tasks:
-        print('No tasks in the list.')
-        return
+* View all tasks.
+* Add new tasks.
+* Remove tasks by task number.
+* Validate user input.
+* Handle invalid task numbers.
+* Prevent empty tasks.
+* Display messages when the task list is empty.
 
-    print('\nYour Tasks:')
-    for index, task in enumerate(tasks, start=1):
-        print(f'{index}. {task}')
+## Technologies Used
 
+* Python 3
 
-def add_task(tasks):
-    task = input('Enter a new task: ').strip()
+## How to Run
 
-    if not task:
-        print('Task cannot be empty!')
-        return
+1. Install Python 3 on your computer.
+2. Download or clone this repository.
+3. Open the project folder in VS Code.
+4. Open the terminal.
+5. Run the following command:
 
-    tasks.append(task)
-    print('Task added successfully!')
-
-
-def remove_task(tasks):
-    if not tasks:
-        print('No tasks available to remove.')
-        return
-
-    display_tasks(tasks)
-
-    while True:
-        try:
-            task_number = int(input('Enter the task number to remove: '))
-
-            if 1 <= task_number <= len(tasks):
-                removed_task = tasks.pop(task_number - 1)
-                print(f'Task "{removed_task}" removed successfully!')
-                break
-            else:
-                print('Invalid task number! Please try again.')
-
-        except ValueError:
-            print('Please enter a valid number.')
-
-
-def main():
-    tasks = []
-
-    while True:
-        print_menu()
-        choice = get_choice()
-
-        if choice == '1':
-            display_tasks(tasks)
-
-        elif choice == '2':
-            add_task(tasks)
-
-        elif choice == '3':
-            remove_task(tasks)
-
-        elif choice == '4':
-            print('Thank you for using the TODO List!')
-            break
-
-
-if __name__ == '__main__':
-    main()
+```bash
+python todo_list.py
 ```
+
+## Concepts Used
+
+* Functions
+* Lists
+* Loops
+* Conditional statements
+* User input
+* Exception handling
+* List methods
+* Enumerate function
+
+## Future Improvements
+
+* Save tasks to a file.
+* Mark tasks as completed.
+* Add task priorities.
+* Add due dates.
+* Store tasks permanently between program runs.
+
+## Author
+
+Python Beginner Project
+
